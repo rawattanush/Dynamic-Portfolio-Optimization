@@ -1,5 +1,5 @@
-```markdown
-# 📈 Deep Reinforcement Learning for Adaptive Portfolio Optimization
+
+# Deep Reinforcement Learning for Adaptive Portfolio Optimization
 
 **Status:** `Complete`
 
