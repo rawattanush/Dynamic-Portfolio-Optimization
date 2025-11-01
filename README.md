@@ -1,5 +1,5 @@
 
-# Deep Reinforcement Learning for Adaptive Portfolio Optimization
+#  Deep Reinforcement Learning for Adaptive Portfolio Optimization
 
 **Status:** `Complete`
 
@@ -47,6 +47,7 @@ The model's performance is defined by its 10-day "memory," which creates a trade
 ### Core Insight: A Tool for a Specific Job
 
 The V2 model is not a "silver bullet." It is a specialized tool that learned to identify and defend against **protracted, slow-moving bear markets**, making it an excellent risk-management agent. It was not, however, equipped to handle sudden, "black swan" crashes, demonstrating the critical importance of `time_window` selection in model design.
+
 ---
 
 ## 4. Model Architecture & Iterations
@@ -81,7 +82,7 @@ The notebooks **must be run in the following order**, as they are codependent.
 
 3.  **`trainercopy (v2).ipynb`**
     * **What it does:** Loads the clean CSV from Step 1. Trains and evaluates the V2 model (`time_window=10`).
-    * **Output:** Saves the trained model (`V2.zip`) to `/NIFTY50_RL_Project/models/`
+    * **Output:** Saves the trained model (`V2.zip`) to `/Nifty50_RL_Project/models/`
 
 4.  **`trainercopy (V3 - BAD).ipynb`**
     * **What it does:** This is the final analysis notebook. It loads the clean CSV, trains the V3 model, and *also* loads the `V1.zip` and `V2.zip` models from the previous steps to run the final comparative backtest.
@@ -110,7 +111,7 @@ Before running, you must create the following folder structure in the root of yo
 
 ### 2. Requirements
 
-All notebooks include installation cells. The main libraries can also be installed locally via a `requirements.txt` file:
+All notebooks include installation cells for these dependencies. For local setup, you can use the following `requirements.txt` file:
 
 ```
 
@@ -129,4 +130,5 @@ stockstats
 ta
 FinRL
 
-
+```
+```
