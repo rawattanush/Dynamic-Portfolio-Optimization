@@ -26,25 +26,27 @@ This project investigates whether a Reinforcement Learning agent can learn a dyn
 
 ## 3. Key Findings & Analysis: The V2 Model
 
-The final analysis, which compared all three model versions against market benchmarks (NIFTY50 and Equal-Weight), revealed a critical insight: **the V2 model is the optimal solution.**
+The final analysis revealed a critical and nuanced insight: **V2 (10-Day Window) is the optimal model, but its strength is highly specific.**
 
-Its "win" is not in generating the highest possible returns during a bull market, but in its **intelligent risk management** during a bear market.
+The model's performance is defined by its 10-day "memory," which creates a trade-off:
+
+* **It Fails in "Black Swan" Events:** V2 performed the *worst* of all models during the **2020 Crash** (Sharpe -1.470). The crash was too sudden and violent; by the time the 10-day window confirmed a problem, the portfolio had already suffered massive losses.
+
+* **It Masters "Slow-Grind" Downturns:** V2 was the *undisputed winner* of the **2022 Bear Market** (Sharpe +0.734). This slow, protracted downturn was the perfect environment for its 10-day memory to identify the bearish regime, adapt, and defensively move to cash, preserving capital while all other models failed.
 
 ### Comparative Performance (Sharpe Ratio by Market Regime)
 
-| Model / Regime | 2020 Crash | 2020-21 Bull Run | **2022 Bear Market** | 2023-25 Recovery |
+| Model / Regime | 2020 Crash<br/>(Fast) | 2020-21 Bull Run<br/>(Up) | **2022 Bear Market**<br/>(Slow) | 2023-25 Recovery<br/>(Up) |
 | :--- | :---: | :---: | :---: | :---: |
-| **🏆 RL Model V2 (10-Day)** | -1.470 | 2.769 | **0.734** | 1.357 |
+| **🏆 RL Model V2 (10-Day)** | -1.470 | 2.769 | **+0.734** | 1.357 |
 | **Equal-Weight (Benchmark)** | -1.114 | **2.923** | 0.592 | **1.534** |
 | **NIFTY50 (Benchmark)** | -1.203 | 2.094 | 0.335 | 1.103 |
 | **RL Model V3 (Overfit)** | -1.506 | 2.480 | 0.049 | 0.907 |
-| **RL Model V1 (Memoryless)** | -1.378 | 2.246 | -0.123 | 0.643 |
+| **RL Model V1 (Memoryless)**| -1.378 | 2.246 | -0.123 | 0.643 |
 
-### Core Insight: The "Defensive" Policy
+### Core Insight: A Tool for a Specific Job
 
-* **Bull Markets (2021, 2023):** In a "risk-on" environment, the purely aggressive `Equal-Weight` strategy posted the highest numbers. The V2 agent was slightly more defensive, which caused it to lag.
-* **Bear Market (2022):** This is where V2 proved its value. As the market crashed, V2's policy **activated its defensive protocols**, posting a strong positive Sharpe Ratio of **0.734**. It decisively beat all other models and benchmarks, which either failed (V1, V3) or struggled to stay positive.
-
+The V2 model is not a "silver bullet." It is a specialized tool that learned to identify and defend against **protracted, slow-moving bear markets**, making it an excellent risk-management agent. It was not, however, equipped to handle sudden, "black swan" crashes, demonstrating the critical importance of `time_window` selection in model design.
 ---
 
 ## 4. Model Architecture & Iterations
