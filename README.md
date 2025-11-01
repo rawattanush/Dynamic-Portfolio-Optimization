@@ -1,5 +1,5 @@
-
-# Deep Reinforcement Learning for Adaptive Portfolio Optimization
+```markdown
+# 📈 Deep Reinforcement Learning for Adaptive Portfolio Optimization
 
 **Status:** `Complete`
 
@@ -79,7 +79,7 @@ The notebooks **must be run in the following order**, as they are codependent.
 
 3.  **`trainercopy (v2).ipynb`**
     * **What it does:** Loads the clean CSV from Step 1. Trains and evaluates the V2 model (`time_window=10`).
-    * **Output:** Saves the trained model (`V2.zip`) to `/Nifty50_RL_Project/models/`
+    * **Output:** Saves the trained model (`V2.zip`) to `/NIFTY50_RL_Project/models/`
 
 4.  **`trainercopy (V3 - BAD).ipynb`**
     * **What it does:** This is the final analysis notebook. It loads the clean CSV, trains the V3 model, and *also* loads the `V1.zip` and `V2.zip` models from the previous steps to run the final comparative backtest.
@@ -94,3 +94,38 @@ This project is configured for Google Colab.
 ### 1. Google Drive Folder Structure
 
 Before running, you must create the following folder structure in the root of your Google Drive:
+
+```
+
+/MyDrive/
+└── Nifty50\_RL\_Project/
+├── finance\_data/
+│   └── processed/
+├── logs/
+└── models/
+
+```
+
+### 2. Requirements
+
+All notebooks include installation cells. The main libraries can also be installed locally via a `requirements.txt` file:
+
+```
+
+# Core ML
+
+torch
+stable-baselines3[extra]
+gymnasium
+
+# Data & Finance
+
+pandas
+numpy
+yfinance
+stockstats
+ta
+FinRL
+
+```
+```
