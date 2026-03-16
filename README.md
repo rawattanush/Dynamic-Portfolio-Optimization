@@ -1,4 +1,3 @@
-
 #  Deep Reinforcement Learning for Adaptive Portfolio Optimization
 
 **Status:** `Complete`
@@ -13,6 +12,8 @@ Traditional portfolio management strategies (like static "buy-and-hold" or marke
 
 This project investigates whether a Reinforcement Learning agent can learn a dynamic trading policy by directly interacting with market data. The agent's goal is to **maximize the risk-adjusted return (Sharpe Ratio)** by learning when to aggressively seek returns and, more importantly, when to defensively rotate into a "risk-free" cash position to preserve capital.
 
+---
+
 ## 2. Technology Stack
 
 * **Core Model:** `Python 3.x`, `PyTorch`
@@ -21,6 +22,21 @@ This project investigates whether a Reinforcement Learning agent can learn a dyn
 * **Data & Analysis:** `Pandas`, `NumPy`, `yfinance` (Data Ingestion)
 * **Feature Engineering:** `stockstats`, `ta`
 * **Environment:** `Google Colab` & `Google Drive`
+
+---
+
+## Project Presentation
+
+A visual explanation of the methodology, experimental setup, and model comparison can be found in the project presentation:
+
+`presentation/Dynamic_Portfolio_Allocation.pdf`
+
+The slides summarize:
+
+- The PPO-based dynamic portfolio allocation approach
+- Evolution of model architectures (V1 → V3)
+- Market regime analysis (COVID crash vs slow bear markets)
+- Comparative Sharpe ratio performance across models
 
 ---
 
@@ -90,6 +106,31 @@ The notebooks **must be run in the following order**, as they are codependent.
 
 ---
 
+## Repository Structure
+
+```
+Dynamic-Portfolio-Optimization
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+│
+├── notebooks
+│   ├── extractor.ipynb
+│   ├── trainercopy (V1).ipynb
+│   ├── trainercopy (v2).ipynb
+│   └── trainercopy (V3 - BAD).ipynb
+│
+├── presentation
+│   └── Dynamic_Portfolio_Allocation.pdf
+│
+├── data
+│
+└── models
+```
+
+---
+
 ## 6. Setup & Environment
 
 This project is configured for Google Colab.
@@ -99,14 +140,12 @@ This project is configured for Google Colab.
 Before running, you must create the following folder structure in the root of your Google Drive:
 
 ```
-
 /MyDrive/
-└── Nifty50\_RL\_Project/
-├── finance\_data/
+└── Nifty50_RL_Project/
+├── finance_data/
 │   └── processed/
 ├── logs/
 └── models/
-
 ```
 
 ### 2. Requirements
@@ -114,7 +153,6 @@ Before running, you must create the following folder structure in the root of yo
 All notebooks include installation cells for these dependencies. For local setup, you can use the following `requirements.txt` file:
 
 ```
-
 # Core ML
 
 torch
@@ -129,4 +167,5 @@ yfinance
 stockstats
 ta
 FinRL
+```
 
