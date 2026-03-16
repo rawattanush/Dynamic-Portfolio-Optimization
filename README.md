@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/banner.png" width="900">
-</p>
-
 #  Deep Reinforcement Learning for Adaptive Portfolio Optimization
 
 **Status:** `Complete`
