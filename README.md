@@ -168,4 +168,8 @@ stockstats
 ta
 FinRL
 ```
+## Keywords
 
+reinforcement learning, portfolio optimization, algorithmic trading, 
+PPO, quantitative finance, stock market prediction, NIFTY50,
+financial machine learning, deep reinforcement learning
