@@ -117,9 +117,10 @@ Dynamic-Portfolio-Optimization
 │
 ├── notebooks
 │   ├── extractor.ipynb
-│   ├── trainercopy (V1).ipynb
-│   ├── trainercopy (v2).ipynb
-│   └── trainercopy (V3 - BAD).ipynb
+│   └── experiments
+│       ├── trainercopy (V1).ipynb
+│       ├── trainercopy (v2).ipynb
+│       └── trainercopy (V3).ipynb
 │
 ├── presentation
 │   └── Dynamic_Portfolio_Allocation.pdf
