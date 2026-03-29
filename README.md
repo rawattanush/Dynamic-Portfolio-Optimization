@@ -92,7 +92,7 @@ The notebooks **must be run in the following order**, as they are codependent.
     * **What it does:** Connects to Google Drive, downloads all NIFTY50 ticker data from Yahoo Finance, cleans it, formats it into a "long" CSV, and saves it to the Drive.
     * **Output:** `/Nifty50_RL_Project/finance_data/processed/_NIFTY50_CLEAN_LONG_FORMAT.csv`
 
-2.  **`trainercopy (V1).ipynb`**
+2.  **`trainercopy (v1).ipynb`**
     * **What it does:** Loads the clean CSV from Step 1. Trains and evaluates the V1 model (`time_window=1`).
     * **Output:** Saves the trained model (`V1.zip`) to `/Nifty50_RL_Project/models/`
 
@@ -100,7 +100,7 @@ The notebooks **must be run in the following order**, as they are codependent.
     * **What it does:** Loads the clean CSV from Step 1. Trains and evaluates the V2 model (`time_window=10`).
     * **Output:** Saves the trained model (`V2.zip`) to `/Nifty50_RL_Project/models/`
 
-4.  **`trainercopy (V3 - BAD).ipynb`**
+4.  **`trainercopy (V3).ipynb`**
     * **What it does:** This is the final analysis notebook. It loads the clean CSV, trains the V3 model, and *also* loads the `V1.zip` and `V2.zip` models from the previous steps to run the final comparative backtest.
     * **Output:** The final comparison tables and graphs.
 
